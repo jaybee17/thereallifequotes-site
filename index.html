@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Real Life Quotes</title>
+<meta name="description" content="Calm words for the days that are not calm. A daily quote, quotes by topic and free guides, for anyone at any age.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@500;600&display=swap">
+<style>
+:root{--bg:#f4f6f8;--surface:#fff;--fg:#1b2531;--muted:#5a6a7a;--line:#d8e0e8;--accent:#2f6f9f;--accent-fg:#fff;--soft:#e5edf4;--serif:'Lora',Georgia,serif;--sans:'Montserrat',system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
+a{color:inherit}:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+nav.top{position:sticky;top:0;background:var(--surface);border-bottom:1px solid var(--line);z-index:5}
+nav.top .wrap{display:flex;align-items:center;gap:18px;padding-block:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.dot{width:36px;height:36px;border-radius:50%;background:#0b84c6;color:#fff;display:grid;place-items:center;font-family:var(--serif);font-size:22px;line-height:1}
+.links{display:flex;gap:6px 18px;margin-left:auto;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;flex-wrap:wrap}
+.links a{color:var(--muted);text-decoration:none;padding:6px 0}.links a:hover{color:var(--fg)}
+.links a.cta{color:var(--accent-fg);background:var(--accent);padding:8px 14px;border-radius:999px}
+.hero{color:#fff;background:linear-gradient(rgba(10,25,40,.45),rgba(10,25,40,.62)),url(https://images.pexels.com/photos/37109411/pexels-photo-37109411/free-photo-of-misty-alpine-lake-at-sunrise-in-austria.jpeg?auto=compress&cs=tinysrgb&w=1400) center/cover #1f3d5a;padding-block:72px 64px}
+.hero .g{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin:0 0 12px;opacity:.9}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(32px,5vw,50px);line-height:1.12;margin:0 0 16px;text-wrap:balance}
+.sub{font-size:17px;margin:0 0 22px;max-width:46ch}
+.form{display:flex;gap:8px;flex-wrap:wrap}.form input{flex:1 1 220px;min-width:0;padding:13px 14px;border:0;border-radius:12px;font:inherit;color:#1b2531}
+.btn{background:#fff;color:#1f3d5a;border:0;border-radius:12px;padding:13px 20px;font:inherit;font-weight:600;font-size:13px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.blue{background:var(--accent);color:var(--accent-fg)}.btn.soft{background:var(--soft);color:var(--fg)}
+.fine{font-size:12px;margin:10px 0 0;opacity:.9}
+.qcard{background:rgba(255,255,255,.14);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:32px 26px;min-height:310px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.qcard blockquote{margin:0;font-family:var(--serif);font-size:26px;line-height:1.38;text-wrap:balance;text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;display:flex;justify-content:space-between;gap:10px;align-items:center}
+.qa{display:flex;gap:8px;flex-wrap:wrap}.qa button{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);color:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:12px;cursor:pointer}
+section.block{padding-block:40px;border-top:1px solid var(--line)}
+h2{font-family:var(--serif);font-weight:500;font-size:28px;margin:0 0 6px;text-wrap:balance}
+.lede{color:var(--muted);margin:0 0 22px;max-width:60ch}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chip{background:var(--soft);border:0;border-radius:999px;padding:8px 16px;font:inherit;font-size:12px;letter-spacing:.04em;color:var(--fg);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.q{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-width:0}
+.q p{margin:0;font-family:var(--serif);font-size:17px;line-height:1.45}
+.q .meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.q button{background:none;border:1px solid var(--line);border-radius:999px;padding:5px 12px;font:inherit;font-size:11px;color:var(--muted);cursor:pointer;letter-spacing:.04em;text-transform:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.th{height:150px;border-radius:12px;background-size:cover;background-position:center;display:flex;align-items:flex-end;padding:12px;color:#fff;font-family:var(--serif);font-size:16px;text-shadow:0 1px 10px rgba(0,0,0,.6);background-color:#3d5f7f}
+.card h3{font-family:var(--serif);font-weight:500;font-size:19px;margin:0}.card p{margin:0;color:var(--muted);font-size:14px}
+.badge{align-self:flex-start;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--soft);color:var(--muted)}
+.news{border-radius:20px;color:#fff;text-align:center;padding:46px 22px;background:linear-gradient(rgba(10,25,40,.5),rgba(10,25,40,.62)),url(https://images.pexels.com/photos/17615500/pexels-photo-17615500/free-photo-of-mountains-reflecting-in-the-lake-against-a-purple-twilight-sky.jpeg?auto=compress&cs=tinysrgb&w=1400) center/cover #1f3d5a}
+.news h2{color:#fff}.news p{max-width:52ch;margin:0 auto 18px}.news .form{justify-content:center}.news input{max-width:340px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.about .im{border-radius:18px;min-height:280px;background:linear-gradient(rgba(10,25,40,.2),rgba(10,25,40,.35)),url(https://images.pexels.com/photos/27700201/pexels-photo-27700201/free-photo-of-sunset-in-zug.jpeg?auto=compress&cs=tinysrgb&w=1400) center/cover #3d5f7f;color:#fff;padding:26px;font-family:var(--serif);font-size:22px;display:flex;align-items:flex-end}
+footer{padding-block:34px 48px;color:var(--muted);font-size:13px;display:flex;gap:10px 24px;flex-wrap:wrap;justify-content:space-between}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}.ggrid.reels{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.ggrid img,.ggrid video{width:100%;display:block;border-radius:14px;background:#d8e0e8;cursor:pointer}.ggrid img{aspect-ratio:4/5;object-fit:cover}.ggrid video{aspect-ratio:9/16;object-fit:cover;background:#000}
+.ggrid figure{margin:0}.ggrid figcaption{font-size:12.5px;color:var(--muted);margin-top:6px}
+.lb{position:fixed;inset:0;background:rgba(8,16,26,.9);display:flex;align-items:center;justify-content:center;padding:20px;z-index:20}.lb[hidden]{display:none}.lb img{max-width:100%;max-height:100%;border-radius:12px}
+.lb button{position:absolute;top:14px;right:14px;background:#fff;border:0;border-radius:999px;padding:8px 16px;font:inherit;font-size:12px;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1b2531;color:#fff;padding:9px 16px;border-radius:999px;font-size:12px;opacity:0;pointer-events:none;transition:opacity .25s}.toast.on{opacity:1}
+@media(max-width:760px){.hero .g,.about{grid-template-columns:1fr}.links{margin-left:0}}
+</style></head>
+<body>
+<nav class="top"><div class="wrap"><a class="brand" href="#top"><span class="dot" aria-hidden="true">&ldquo;</span>The Real Life Quotes</a>
+<div class="links"><a href="#today">Today</a><a href="#quotes">Quotes</a><a href="#facebook">Facebook</a><a href="#guides">Free guides</a><a href="#about">About</a><a class="cta" href="#join">Join free</a></div></div></nav>
+<header class="hero" id="top"><div class="wrap g">
+<div><p class="eyebrow">Quotes for real life</p><h1>Calm words for the days that are not calm.</h1>
+<p class="sub">A daily quote, free guides and simple tools to help you slow down, feel grateful and keep going. For anyone, at any age.</p>
+<form class="form" id="f1"><label for="e1" hidden>Email address</label><input id="e1" type="email" placeholder="Your email address" autocomplete="email" required><button class="btn" type="submit">Get the free guides</button></form>
+<p class="fine" id="m1">Free. One calm quote at a time. You can leave anytime.</p></div>
+<div class="qcard" id="today"><div class="tag"><span>Today's quote</span><span id="tcat"></span></div>
+<blockquote id="tq"></blockquote>
+<div class="tag"><span class="qa"><button type="button" id="tcopy">Copy</button><button type="button" id="tnext">Another quote</button></span><span id="tdate"></span></div></div>
+</div></header>
+<section class="block" id="quotes"><div class="wrap"><h2>Quotes</h2><p class="lede">Browse by topic. Tap Copy to share a quote with someone who needs it.</p>
+<div class="chips" id="chips" role="group" aria-label="Topics"></div><div class="qgrid" id="qgrid"></div></div></section>
+<section class="block" id="facebook"><div class="wrap"><h2>Latest from Facebook</h2><p class="lede">Everything we post on Facebook is shared here too. Tap a photo to see it larger.</p>
+<div class="chips" id="gtabs" role="group" aria-label="Photos or reels"><button class="chip" type="button" data-t="photos" aria-pressed="true">Photos</button><button class="chip" type="button" data-t="reels" aria-pressed="false">Reels</button></div>
+<div class="ggrid" id="ggrid"></div>
+<p style="margin:22px 0 0"><a class="btn blue" href="https://www.facebook.com/profile.php?id=913293745199084" target="_blank" rel="noopener">Follow on Facebook</a></p></div></section>
+<div class="lb" id="lb" hidden><button type="button" id="lbx" aria-label="Close">Close</button><img id="lbi" alt="Quote image"></div>
+<section class="block" id="guides"><div class="wrap"><h2>Free guides</h2><p class="lede">Short, printable and easy to finish. Join free and get them as soon as they are ready.</p>
+<div class="cards">
+<div class="card"><div class="th" style="background-image:url(https://images.pexels.com/photos/16252909/pexels-photo-16252909/free-photo-of-river-hills-and-mountain-behind-at-dawn.jpeg?auto=compress&cs=tinysrgb&w=1400)">7 days of gratitude</div><span class="badge">Coming soon</span><h3>7 Days of Gratitude</h3><p>One quote and one small question a day for a week.</p></div>
+<div class="card"><div class="th" style="background-image:url(https://images.pexels.com/photos/629167/pexels-photo-629167.jpeg?auto=compress&cs=tinysrgb&w=1400)">Reset your evening</div><span class="badge">Coming soon</span><h3>The 10-Minute Evening Reset</h3><p>A calm routine to put the day down and sleep easier.</p></div>
+<div class="card"><div class="th" style="background-image:url(https://images.pexels.com/photos/17615500/pexels-photo-17615500/free-photo-of-mountains-reflecting-in-the-lake-against-a-purple-twilight-sky.jpeg?auto=compress&cs=tinysrgb&w=1400)">Start over</div><span class="badge">Coming soon</span><h3>Starting Over at Any Age</h3><p>Simple steps and 20 quotes for a fresh beginning.</p></div>
+</div></div></section>
+<section class="block" id="about"><div class="wrap"><div class="about"><div><p class="eyebrow" style="color:var(--muted)">About</p><h2>Quotes for real life.</h2>
+<p class="lede" style="margin-bottom:14px">The Real Life Quotes shares calm, honest words about gratitude, peace, healing, self-worth and starting over. They are written for ordinary days, for anyone, at any age.</p>
+<p class="lede" style="margin:0">Follow along on Facebook for new quotes and reels every day. Everything we post there is shared on this site too.</p></div>
+<div class="im">Slow down. You are doing better than you think.</div></div></div></section>
+<section class="block" id="join"><div class="wrap"><div class="news"><h2>One calm quote in your inbox each morning</h2><p>Join free and get the guides as soon as they are ready. Read it in under a minute.</p>
+<form class="form" id="f2"><label for="e2" hidden>Email address</label><input id="e2" type="email" placeholder="Your email address" autocomplete="email" required><button class="btn" type="submit">Join free</button></form>
+<p class="fine" id="m2">Free. You can unsubscribe anytime.</p></div></div></section>
+<footer class="wrap"><span>&copy; The Real Life Quotes</span><span><a href="https://www.facebook.com/profile.php?id=913293745199084" target="_blank" rel="noopener">Facebook</a></span></footer>
+<div class="toast" id="toast" role="status"></div>
+<script src="gallery.js"></script>
+<script>
+var Q=[
+["Gratitude","Gratitude turns an ordinary day into one worth remembering."],
+["Gratitude","Notice what is already going right. It is more than you think."],
+["Gratitude","Be thankful for the quiet mornings. They are not guaranteed, and they are enough."],
+["Gratitude","Small joys are not small. They are what a good life is built from."],
+["Gratitude","Say thank you to the day, even if it was hard. You got through it."],
+["Gratitude","What you appreciate grows. Start with what is in front of you."],
+["Gratitude","A grateful heart finds room even on a crowded day."],
+["Peace","You do not have to explain your peace. You only have to protect it."],
+["Peace","Peace is not the absence of problems. It is choosing not to carry them all at once."],
+["Peace","Slow down. Nothing you are rushing toward is worth losing yourself over."],
+["Peace","Quiet is not empty. It is where you hear yourself again."],
+["Peace","Some doors close so you can finally rest."],
+["Peace","Let the water settle and it becomes clear. So will your mind."],
+["Peace","Protect your calm like it is the only one you have."],
+["Healing","Some days healing looks like rest. Some days it looks like saying no."],
+["Healing","You are allowed to heal slowly. Slow is still moving."],
+["Healing","Letting go is not forgetting. It is putting it down so you can walk."],
+["Healing","Be as patient with yourself as you are with the people you love."],
+["Healing","The hard chapter is not the whole book."],
+["Healing","You are not behind. You are healing at the pace you need."],
+["Healing","It is okay to be a work in progress and a masterpiece at once."],
+["Self-worth","You are not too much and you are not too little. You are enough as you are."],
+["Self-worth","What is meant for you will not ask you to shrink."],
+["Self-worth","Your worth was never up for debate."],
+["Self-worth","Stop shrinking to fit places you have outgrown."],
+["Self-worth","You teach people how to treat you by what you accept."],
+["Self-worth","Choose the people who choose you back."],
+["Self-worth","Your energy is a gift. Spend it where it is valued."],
+["Wisdom","With age comes the freedom to stop explaining yourself."],
+["Wisdom","The older I get, the more I choose peace over being right."],
+["Wisdom","It is never too late to start over. Ask anyone who has."],
+["Wisdom","You do not need a new year to begin again. You only need today."],
+["Wisdom","Experience is what you keep when everything else changes."],
+["Wisdom","Time teaches what comfort never could."],
+["Wisdom","Not every battle needs you. Learn which ones to leave."],
+["Motivation","Begin before you feel ready. Ready arrives on the way."],
+["Motivation","One small step today is still a step."],
+["Motivation","Your future self is watching. Give them something to thank you for."],
+["Motivation","Do it tired. Do it scared. Just do the next small thing."],
+["Motivation","Progress is quiet. Keep going anyway."],
+["Motivation","You have survived every hard day so far. That is a good track record."],
+["Motivation","The best time to be kind to yourself is right now."],
+["Everyday","The best things in life cost nothing: sunrise, laughter, a long breath."],
+["Everyday","Take a breath. In, then out. You are doing better than you think."],
+["Everyday","Not everything needs a reply. Not everyone needs access to you."],
+["Everyday","Rest is not a reward. It is a requirement."],
+["Everyday","Some days, getting through is the whole accomplishment."],
+["Everyday","Be the calm in someone's loud day."]
+];
+var $=function(s){return document.querySelector(s)};
+var tt;function toast(m){var t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(function(){t.classList.remove('on')},1800)}
+function copy(txt){var ok=function(){toast('Copied')},no=function(){toast('Press and hold the text to copy')};try{navigator.clipboard.writeText(txt).then(ok,no)}catch(e){no()}}
+function today(){var d=new Date();return Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000)%Q.length}
+var cur=today();
+function show(i){cur=i;$('#tq').textContent=Q[i][1];$('#tcat').textContent=Q[i][0];$('#tdate').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'})}
+show(cur);
+$('#tcopy').onclick=function(){copy('"'+Q[cur][1]+'" - The Real Life Quotes')};
+$('#tnext').onclick=function(){var n;do{n=Math.floor(Math.random()*Q.length)}while(n===cur);show(n)};
+var cats=['All'].concat(Q.map(function(q){return q[0]}).filter(function(v,i,a){return a.indexOf(v)===i})),sel='All';
+function draw(){var c=$('#chips');c.innerHTML='';cats.forEach(function(k){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=k;b.setAttribute('aria-pressed',k===sel?'true':'false');b.onclick=function(){sel=k;draw()};c.appendChild(b)});
+ var g=$('#qgrid');g.innerHTML='';Q.forEach(function(q){if(sel!=='All'&&q[0]!==sel)return;var d=document.createElement('div');d.className='q';var p=document.createElement('p');p.textContent=q[1];var m=document.createElement('div');m.className='meta';var s=document.createElement('span');s.textContent=q[0];var b=document.createElement('button');b.type='button';b.textContent='Copy';b.onclick=function(){copy('"'+q[1]+'" - The Real Life Quotes')};m.appendChild(s);m.appendChild(b);d.appendChild(p);d.appendChild(m);g.appendChild(d)})}
+draw();
+
+var G=window.RLQ_GALLERY||{photos:[],reels:[]};var gt='photos';
+function gdraw(){var w=$('#ggrid');w.innerHTML='';w.className='ggrid'+(gt==='reels'?' reels':'');
+ if(gt==='photos'){G.photos.forEach(function(p){var i=document.createElement('img');i.src=p.src;i.loading='lazy';i.alt='Quote image from The Real Life Quotes';i.onclick=function(){$('#lbi').src=p.src;$('#lb').hidden=false};w.appendChild(i)})}
+ else{G.reels.forEach(function(r){var f=document.createElement('figure');var v=document.createElement('video');v.src=r.src;v.controls=true;v.preload='none';v.playsInline=true;var c=document.createElement('figcaption');c.textContent=r.title||'';f.appendChild(v);f.appendChild(c);w.appendChild(f)})}
+ document.querySelectorAll('#gtabs .chip').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.t===gt?'true':'false')})}
+document.querySelectorAll('#gtabs .chip').forEach(function(b){b.onclick=function(){gt=b.dataset.t;gdraw()}});
+$('#lbx').onclick=function(){$('#lb').hidden=true};$('#lb').onclick=function(e){if(e.target.id==='lb')$('#lb').hidden=true};
+document.addEventListener('keydown',function(e){if(e.key==='Escape')$('#lb').hidden=true});
+gdraw();
+/* Email signup: connect these two forms to your email service (for example MailerLite, Kit or Payhip) before launch. */
+['f1','f2'].forEach(function(id,i){document.getElementById(id).addEventListener('submit',function(e){e.preventDefault();document.getElementById('m'+(i+1)).textContent='Thank you. Signup will be connected before launch.'})});
+</script>
+</body></html>
