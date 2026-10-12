@@ -65,7 +65,7 @@ footer{padding-block:34px 48px;color:var(--muted);font-size:13px;display:flex;ga
 <header class="hero" id="top"><div class="wrap g">
 <div><p class="eyebrow">Quotes for real life</p><h1>Calm words for the days that are not calm.</h1>
 <p class="sub">A daily quote, free guides and simple tools to help you slow down, feel grateful and keep going. For anyone, at any age.</p>
-<form class="form" id="f1"><label for="e1" hidden>Email address</label><input id="e1" type="email" placeholder="Your email address" autocomplete="email" required><button class="btn" type="submit">Get the free guides</button></form>
+<div class="form"><button class="btn" type="button" data-signup>Get the free guides</button></div>
 <p class="fine" id="m1">Free. One calm quote at a time. You can leave anytime.</p></div>
 <div class="qcard" id="today"><div class="tag"><span>Today's quote</span><span id="tcat"></span></div>
 <blockquote id="tq"></blockquote>
@@ -89,7 +89,7 @@ footer{padding-block:34px 48px;color:var(--muted);font-size:13px;display:flex;ga
 <p class="lede" style="margin:0">Follow along on Facebook for new quotes and reels every day. Everything we post there is shared on this site too.</p></div>
 <div class="im">Slow down. You are doing better than you think.</div></div></div></section>
 <section class="block" id="join"><div class="wrap"><div class="news"><h2>One calm quote in your inbox each morning</h2><p>Join free and get the guides as soon as they are ready. Read it in under a minute.</p>
-<form class="form" id="f2"><label for="e2" hidden>Email address</label><input id="e2" type="email" placeholder="Your email address" autocomplete="email" required><button class="btn" type="submit">Join free</button></form>
+<div class="form"><button class="btn" type="button" data-signup>Join free</button></div>
 <p class="fine" id="m2">Free. You can unsubscribe anytime.</p></div></div></section>
 <footer class="wrap"><span>&copy; The Real Life Quotes</span><span><a href="https://www.facebook.com/profile.php?id=913293745199084" target="_blank" rel="noopener">Facebook</a></span></footer>
 <div class="toast" id="toast" role="status"></div>
@@ -168,7 +168,7 @@ document.querySelectorAll('#gtabs .chip').forEach(function(b){b.onclick=function
 $('#lbx').onclick=function(){$('#lb').hidden=true};$('#lb').onclick=function(e){if(e.target.id==='lb')$('#lb').hidden=true};
 document.addEventListener('keydown',function(e){if(e.key==='Escape')$('#lb').hidden=true});
 gdraw();
-/* Email signup: connect these two forms to your email service (for example MailerLite, Kit or Payhip) before launch. */
-['f1','f2'].forEach(function(id,i){document.getElementById(id).addEventListener('submit',function(e){e.preventDefault();document.getElementById('m'+(i+1)).textContent='Thank you. Signup will be connected before launch.'})});
+document.querySelectorAll('[data-signup]').forEach(function(b){b.addEventListener('click',function(){document.getElementById('signup').showModal()})});document.getElementById('signupx').addEventListener('click',function(){document.getElementById('signup').close()});
 </script>
+<dialog id="signup" style="border:0;border-radius:16px;padding:0;max-width:560px;width:94%"><button type="button" id="signupx" style="float:right;margin:8px 12px;border:0;background:none;font-size:15px;cursor:pointer">Close</button><iframe src="https://670fcefd.sibforms.com/serve/MUIFAJqLrXS1zgcXTQeBCK8wJFvbR2rO_BRv0Ocp3UN0ZlzZ-mFFe3IXnCJ4j5DQT_Dy2KWIKFNgIbr-dSVFDnBtoBxmPo4vwcNuYQpz85D4YIUKCj2pVu9mvMOzga__ItNJLOGSmOEwgZ_yiA6FSy8SppamLB2WNiJg7hsmwn93UQKHGbMlRNsbRVxvfuATqL5bPEJefcRh5qGAmw==" width="540" height="420" frameborder="0" scrolling="auto" style="display:block;margin:0 auto;max-width:100%;border:0" title="Sign up"></iframe></dialog>
 </body></html>
