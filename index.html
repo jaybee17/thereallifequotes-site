@@ -36,7 +36,8 @@ h2{font-family:var(--serif);font-weight:500;font-size:28px;margin:0 0 6px;text-w
 .chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
 .chip{background:var(--soft);border:0;border-radius:999px;padding:8px 16px;font:inherit;font-size:12px;letter-spacing:.04em;color:var(--fg);cursor:pointer}
 .chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
-.qgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.qwrap{position:relative}.qgrid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 12px;scrollbar-width:none}.qgrid::-webkit-scrollbar{display:none}.qgrid>.q{flex:0 0 min(300px,82%);scroll-snap-align:start}
+.qarrow{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:var(--accent);color:var(--accent-fg);font-size:22px;line-height:1;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.25)}.qarrow.l{left:-10px}.qarrow.r{right:-10px}.qarrow:hover{opacity:.9}
 .q{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-width:0}
 .q p{margin:0;font-family:var(--serif);font-size:17px;line-height:1.45}
 .q .meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
@@ -72,24 +73,24 @@ footer{padding-block:34px 48px;color:var(--muted);font-size:13px;display:flex;ga
 <div class="tag"><span class="qa"><button type="button" id="tcopy">Copy</button><button type="button" id="tnext">Another quote</button></span><span id="tdate"></span></div></div>
 </div></header>
 <section class="block" id="quotes"><div class="wrap"><h2>Quotes</h2><p class="lede">Browse by topic. Tap Copy to share a quote with someone who needs it.</p>
-<div class="chips" id="chips" role="group" aria-label="Topics"></div><div class="qgrid" id="qgrid"></div></div></section>
+<div class="chips" id="chips" role="group" aria-label="Topics"></div><div class="qwrap"><button type="button" class="qarrow l" id="qprev" aria-label="Previous quotes">&#8249;</button><div class="qgrid" id="qgrid"></div><button type="button" class="qarrow r" id="qnext" aria-label="Next quotes">&#8250;</button></div></div></section>
 <section class="block" id="facebook"><div class="wrap"><h2>Latest from Facebook</h2><p class="lede">Everything we post on Facebook is shared here too. Tap a photo to see it larger.</p>
 <div class="chips" id="gtabs" role="group" aria-label="Photos or reels"><button class="chip" type="button" data-t="photos" aria-pressed="true">Photos</button><button class="chip" type="button" data-t="reels" aria-pressed="false">Reels</button></div>
 <div class="ggrid" id="ggrid"></div>
 <p style="margin:22px 0 0"><a class="btn blue" href="https://www.facebook.com/profile.php?id=913293745199084" target="_blank" rel="noopener">Follow on Facebook</a></p></div></section>
 <div class="lb" id="lb" hidden><button type="button" id="lbx" aria-label="Close">Close</button><img id="lbi" alt="Quote image"></div>
-<section class="block" id="guides"><div class="wrap"><h2>Free guides</h2><p class="lede">Short, printable and easy to finish. Download the Facebook playbook now. Join free to get the others as soon as they are ready.</p>
+<section class="block" id="guides"><div class="wrap"><h2>Free guides</h2><p class="lede">Short, printable and easy to finish. Download them free, no sign-up needed. Join free to get a calm quote in your inbox each morning.</p>
 <div class="cards">
-<div class="card"><div class="th" style="background-image:url(https://images.pexels.com/photos/16252909/pexels-photo-16252909/free-photo-of-river-hills-and-mountain-behind-at-dawn.jpeg?auto=compress&cs=tinysrgb&w=1400)">7 days of gratitude</div><span class="badge">Coming soon</span><h3>7 Days of Gratitude</h3><p>One quote and one small question a day for a week.</p></div>
-<div class="card"><div class="th" style="background-image:url(https://images.pexels.com/photos/629167/pexels-photo-629167.jpeg?auto=compress&cs=tinysrgb&w=1400)">Reset your evening</div><span class="badge">Coming soon</span><h3>The 10-Minute Evening Reset</h3><p>A calm routine to put the day down and sleep easier.</p></div>
-<div class="card"><div class="th" style="background-image:url(https://images.pexels.com/photos/17615500/pexels-photo-17615500/free-photo-of-mountains-reflecting-in-the-lake-against-a-purple-twilight-sky.jpeg?auto=compress&cs=tinysrgb&w=1400)">Start over</div><span class="badge">Coming soon</span><h3>Starting Over at Any Age</h3><p>Simple steps and 20 quotes for a fresh beginning.</p></div>
+<a class="card" href="7-Days-of-Gratitude.pdf" download style="text-decoration:none;color:inherit"><div class="th" style="background-image:url(https://images.pexels.com/photos/16252909/pexels-photo-16252909/free-photo-of-river-hills-and-mountain-behind-at-dawn.jpeg?auto=compress&cs=tinysrgb&w=1400)">7 days of gratitude</div><span class="badge">Free download</span><h3>7 Days of Gratitude</h3><p>One quote and one small question a day for a week.</p></a>
+<a class="card" href="10-Minute-Evening-Reset.pdf" download style="text-decoration:none;color:inherit"><div class="th" style="background-image:url(https://images.pexels.com/photos/629167/pexels-photo-629167.jpeg?auto=compress&cs=tinysrgb&w=1400)">Reset your evening</div><span class="badge">Free download</span><h3>The 10-Minute Evening Reset</h3><p>A calm routine to put the day down and sleep easier.</p></a>
+<a class="card" href="Starting-Over-at-Any-Age.pdf" download style="text-decoration:none;color:inherit"><div class="th" style="background-image:url(https://images.pexels.com/photos/17615500/pexels-photo-17615500/free-photo-of-mountains-reflecting-in-the-lake-against-a-purple-twilight-sky.jpeg?auto=compress&cs=tinysrgb&w=1400)">Start over</div><span class="badge">Free download</span><h3>Starting Over at Any Age</h3><p>Simple steps and 20 quotes for a fresh beginning.</p></a>
 <a class="card" href="Facebook-Page-Profit-Playbook.pdf" download style="text-decoration:none;color:inherit"><div class="th" style="background-image:url(https://images.pexels.com/photos/16252909/pexels-photo-16252909/free-photo-of-river-hills-and-mountain-behind-at-dawn.jpeg?auto=compress&cs=tinysrgb&w=1400)">Facebook page guide</div><span class="badge">Free download</span><h3>The Facebook Page Profit Playbook</h3><p>How to run a faceless Facebook Page with calm daily quotes and reels, step by step. 35 pages, free PDF.</p></a>
 </div></div></section>
 <section class="block" id="about"><div class="wrap"><div class="about"><div><p class="eyebrow" style="color:var(--muted)">About</p><h2>Quotes for real life.</h2>
 <p class="lede" style="margin-bottom:14px">The Real Life Quotes shares calm, honest words about gratitude, peace, healing, self-worth and starting over. They are written for ordinary days, for anyone, at any age.</p>
 <p class="lede" style="margin:0">Follow along on Facebook for new quotes and reels every day. Everything we post there is shared on this site too.</p></div>
 <div class="im">Slow down. You are doing better than you think.</div></div></div></section>
-<section class="block" id="join"><div class="wrap"><div class="news"><h2>One calm quote in your inbox each morning</h2><p>Join free and get the guides as soon as they are ready. Read it in under a minute.</p>
+<section class="block" id="join"><div class="wrap"><div class="news"><h2>One calm quote in your inbox each morning</h2><p>Join free and get new quotes and guides first. Read it in under a minute.</p>
 <div class="form"><button class="btn" type="button" data-signup>Join free</button></div>
 <p class="fine" id="m2">Free. You can unsubscribe anytime.</p></div></div></section>
 <footer class="wrap"><span>&copy; The Real Life Quotes</span><span><a href="https://www.facebook.com/profile.php?id=913293745199084" target="_blank" rel="noopener">Facebook</a></span></footer>
@@ -170,6 +171,7 @@ $('#lbx').onclick=function(){$('#lb').hidden=true};$('#lb').onclick=function(e){
 document.addEventListener('keydown',function(e){if(e.key==='Escape')$('#lb').hidden=true});
 gdraw();
 document.querySelectorAll('[data-signup]').forEach(function(b){b.addEventListener('click',function(){document.getElementById('signup').showModal()})});document.getElementById('signupx').addEventListener('click',function(){document.getElementById('signup').close()});
+document.getElementById('qprev').onclick=function(){document.getElementById('qgrid').scrollBy({left:-620})};document.getElementById('qnext').onclick=function(){document.getElementById('qgrid').scrollBy({left:620})};
 </script>
 <dialog id="signup" style="border:0;border-radius:16px;padding:0;max-width:560px;width:94%"><button type="button" id="signupx" style="float:right;margin:8px 12px;border:0;background:none;font-size:15px;cursor:pointer">Close</button><iframe src="https://670fcefd.sibforms.com/serve/MUIFAJqLrXS1zgcXTQeBCK8wJFvbR2rO_BRv0Ocp3UN0ZlzZ-mFFe3IXnCJ4j5DQT_Dy2KWIKFNgIbr-dSVFDnBtoBxmPo4vwcNuYQpz85D4YIUKCj2pVu9mvMOzga__ItNJLOGSmOEwgZ_yiA6FSy8SppamLB2WNiJg7hsmwn93UQKHGbMlRNsbRVxvfuATqL5bPEJefcRh5qGAmw==" width="540" height="420" frameborder="0" scrolling="auto" style="display:block;margin:0 auto;max-width:100%;border:0" title="Sign up"></iframe></dialog>
 </body></html>
