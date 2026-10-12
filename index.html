@@ -163,7 +163,7 @@ draw();
 
 var G=window.RLQ_GALLERY||{photos:[],reels:[]};
 function gdraw(){var w=$('#gp');w.innerHTML='';G.photos.forEach(function(p){var i=document.createElement('img');i.src=p.src;i.loading='lazy';i.alt='Quote image from The Real Life Quotes';i.onclick=function(){$('#lbi').src=p.src;$('#lb').hidden=false};w.appendChild(i)});
- var r=$('#gr');r.innerHTML='';G.reels.forEach(function(x){var f=document.createElement('figure');var v=document.createElement('video');v.src=x.src;v.controls=true;v.preload='none';v.playsInline=true;var c=document.createElement('figcaption');c.textContent=x.title||'';f.appendChild(v);f.appendChild(c);r.appendChild(f)})}
+ var r=$('#gr');r.innerHTML='';G.reels.forEach(function(x){var f=document.createElement('figure');var v=document.createElement('video');v.src=x.src+'#t=0.6';v.controls=true;v.preload='metadata';v.muted=false;v.playsInline=true;var c=document.createElement('figcaption');c.textContent=x.title||'';f.appendChild(v);f.appendChild(c);r.appendChild(f)})}
 document.querySelectorAll('.qarrow[data-s]').forEach(function(b){b.onclick=function(){document.getElementById(b.dataset.s).scrollBy({left:520*b.dataset.d})}});
 $('#lbx').onclick=function(){$('#lb').hidden=true};$('#lb').onclick=function(e){if(e.target.id==='lb')$('#lb').hidden=true};
 document.addEventListener('keydown',function(e){if(e.key==='Escape')$('#lb').hidden=true});
