@@ -52,7 +52,7 @@ h2{font-family:var(--serif);font-weight:500;font-size:28px;margin:0 0 6px;text-w
 .about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
 .about .im{border-radius:18px;min-height:280px;background:linear-gradient(rgba(10,25,40,.2),rgba(10,25,40,.35)),url(https://images.pexels.com/photos/27700201/pexels-photo-27700201/free-photo-of-sunset-in-zug.jpeg?auto=compress&cs=tinysrgb&w=1400) center/cover #3d5f7f;color:#fff;padding:26px;font-family:var(--serif);font-size:22px;display:flex;align-items:flex-end}
 footer{padding-block:34px 48px;color:var(--muted);font-size:13px;display:flex;gap:10px 24px;flex-wrap:wrap;justify-content:space-between}
-.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}.ggrid.reels{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
+.ggrid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 12px;scrollbar-width:none}.ggrid::-webkit-scrollbar{display:none}.ggrid>figure{flex:0 0 min(220px,60%);scroll-snap-align:start}.ggrid.reels>figure{flex:0 0 min(190px,52%)}
 .ggrid img,.ggrid video{width:100%;display:block;border-radius:14px;background:#d8e0e8;cursor:pointer}.ggrid img{aspect-ratio:4/5;object-fit:cover}.ggrid video{aspect-ratio:9/16;object-fit:cover;background:#000}
 .ggrid figure{margin:0}.ggrid figcaption{font-size:12.5px;color:var(--muted);margin-top:6px}
 .lb{position:fixed;inset:0;background:rgba(8,16,26,.9);display:flex;align-items:center;justify-content:center;padding:20px;z-index:20}.lb[hidden]{display:none}.lb img{max-width:100%;max-height:100%;border-radius:12px}
@@ -76,7 +76,7 @@ footer{padding-block:34px 48px;color:var(--muted);font-size:13px;display:flex;ga
 <div class="chips" id="chips" role="group" aria-label="Topics"></div><div class="qwrap"><button type="button" class="qarrow l" id="qprev" aria-label="Previous quotes">&#8249;</button><div class="qgrid" id="qgrid"></div><button type="button" class="qarrow r" id="qnext" aria-label="Next quotes">&#8250;</button></div></div></section>
 <section class="block" id="facebook"><div class="wrap"><h2>Latest from Facebook</h2><p class="lede">Everything we post on Facebook is shared here too. Tap a photo to see it larger.</p>
 <div class="chips" id="gtabs" role="group" aria-label="Photos or reels"><button class="chip" type="button" data-t="photos" aria-pressed="true">Photos</button><button class="chip" type="button" data-t="reels" aria-pressed="false">Reels</button></div>
-<div class="ggrid" id="ggrid"></div>
+<div class="qwrap"><button type="button" class="qarrow l" id="gprev" aria-label="Previous">&#8249;</button><div class="ggrid" id="ggrid"></div><button type="button" class="qarrow r" id="gnext" aria-label="Next">&#8250;</button></div>
 <p style="margin:22px 0 0"><a class="btn blue" href="https://www.facebook.com/profile.php?id=913293745199084" target="_blank" rel="noopener">Follow on Facebook</a></p></div></section>
 <div class="lb" id="lb" hidden><button type="button" id="lbx" aria-label="Close">Close</button><img id="lbi" alt="Quote image"></div>
 <section class="block" id="guides"><div class="wrap"><h2>Free guides</h2><p class="lede">Short, printable and easy to finish. Download them free, no sign-up needed. Join free to get a calm quote in your inbox each morning.</p>
@@ -172,6 +172,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')$('#lb').hid
 gdraw();
 document.querySelectorAll('[data-signup]').forEach(function(b){b.addEventListener('click',function(){document.getElementById('signup').showModal()})});document.getElementById('signupx').addEventListener('click',function(){document.getElementById('signup').close()});
 document.getElementById('qprev').onclick=function(){document.getElementById('qgrid').scrollBy({left:-620})};document.getElementById('qnext').onclick=function(){document.getElementById('qgrid').scrollBy({left:620})};
+document.getElementById('gprev').onclick=function(){document.getElementById('ggrid').scrollBy({left:-480})};document.getElementById('gnext').onclick=function(){document.getElementById('ggrid').scrollBy({left:480})};
 </script>
 <dialog id="signup" style="border:0;border-radius:16px;padding:0;max-width:560px;width:94%"><button type="button" id="signupx" style="float:right;margin:8px 12px;border:0;background:none;font-size:15px;cursor:pointer">Close</button><iframe src="https://670fcefd.sibforms.com/serve/MUIFAJqLrXS1zgcXTQeBCK8wJFvbR2rO_BRv0Ocp3UN0ZlzZ-mFFe3IXnCJ4j5DQT_Dy2KWIKFNgIbr-dSVFDnBtoBxmPo4vwcNuYQpz85D4YIUKCj2pVu9mvMOzga__ItNJLOGSmOEwgZ_yiA6FSy8SppamLB2WNiJg7hsmwn93UQKHGbMlRNsbRVxvfuATqL5bPEJefcRh5qGAmw==" width="540" height="420" frameborder="0" scrolling="auto" style="display:block;margin:0 auto;max-width:100%;border:0" title="Sign up"></iframe></dialog>
 </body></html>
