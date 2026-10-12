@@ -52,7 +52,7 @@ h2{font-family:var(--serif);font-weight:500;font-size:28px;margin:0 0 6px;text-w
 .about{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
 .about .im{border-radius:18px;min-height:280px;background:linear-gradient(rgba(10,25,40,.2),rgba(10,25,40,.35)),url(https://images.pexels.com/photos/27700201/pexels-photo-27700201/free-photo-of-sunset-in-zug.jpeg?auto=compress&cs=tinysrgb&w=1400) center/cover #3d5f7f;color:#fff;padding:26px;font-family:var(--serif);font-size:22px;display:flex;align-items:flex-end}
 footer{padding-block:34px 48px;color:var(--muted);font-size:13px;display:flex;gap:10px 24px;flex-wrap:wrap;justify-content:space-between}
-.ggrid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 12px;scrollbar-width:none}.ggrid::-webkit-scrollbar{display:none}.ggrid>*{flex:0 0 min(230px,62%);width:auto;scroll-snap-align:start}.ggrid.reels>*{flex:0 0 min(190px,52%)}
+.ggrid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 12px;scrollbar-width:none}.ggrid::-webkit-scrollbar{display:none}.ggrid>*{flex:0 0 170px;width:170px;scroll-snap-align:start}.ggrid.reels>*{flex:0 0 150px;width:150px}.ggrid.reels figure{width:150px}.gh{font-family:var(--serif);font-size:20px;margin:26px 0 10px}
 .ggrid img,.ggrid video{width:100%;display:block;border-radius:14px;background:#d8e0e8;cursor:pointer}.ggrid img{aspect-ratio:4/5;object-fit:cover}.ggrid video{aspect-ratio:9/16;object-fit:cover;background:#000}
 .ggrid figure{margin:0}.ggrid figcaption{font-size:12.5px;color:var(--muted);margin-top:6px}
 .lb{position:fixed;inset:0;background:rgba(8,16,26,.9);display:flex;align-items:center;justify-content:center;padding:20px;z-index:20}.lb[hidden]{display:none}.lb img{max-width:100%;max-height:100%;border-radius:12px}
@@ -75,8 +75,8 @@ footer{padding-block:34px 48px;color:var(--muted);font-size:13px;display:flex;ga
 <section class="block" id="quotes"><div class="wrap"><h2>Quotes</h2><p class="lede">Browse by topic. Tap Copy to share a quote with someone who needs it.</p>
 <div class="chips" id="chips" role="group" aria-label="Topics"></div><div class="qwrap"><button type="button" class="qarrow l" id="qprev" aria-label="Previous quotes">&#8249;</button><div class="qgrid" id="qgrid"></div><button type="button" class="qarrow r" id="qnext" aria-label="Next quotes">&#8250;</button></div></div></section>
 <section class="block" id="facebook"><div class="wrap"><h2>Latest from Facebook</h2><p class="lede">Everything we post on Facebook is shared here too. Tap a photo to see it larger.</p>
-<div class="chips" id="gtabs" role="group" aria-label="Photos or reels"><button class="chip" type="button" data-t="photos" aria-pressed="true">Photos</button><button class="chip" type="button" data-t="reels" aria-pressed="false">Reels</button></div>
-<div class="qwrap"><button type="button" class="qarrow l" id="gprev" aria-label="Previous">&#8249;</button><div class="ggrid" id="ggrid"></div><button type="button" class="qarrow r" id="gnext" aria-label="Next">&#8250;</button></div>
+<h3 class="gh">Photos</h3><div class="qwrap"><button type="button" class="qarrow l" data-s="gp" data-d="-1" aria-label="Previous photos">&#8249;</button><div class="ggrid" id="gp"></div><button type="button" class="qarrow r" data-s="gp" data-d="1" aria-label="Next photos">&#8250;</button></div>
+<h3 class="gh">Reels</h3><div class="qwrap"><button type="button" class="qarrow l" data-s="gr" data-d="-1" aria-label="Previous reels">&#8249;</button><div class="ggrid reels" id="gr"></div><button type="button" class="qarrow r" data-s="gr" data-d="1" aria-label="Next reels">&#8250;</button></div>
 <p style="margin:22px 0 0"><a class="btn blue" href="https://www.facebook.com/profile.php?id=913293745199084" target="_blank" rel="noopener">Follow on Facebook</a></p></div></section>
 <div class="lb" id="lb" hidden><button type="button" id="lbx" aria-label="Close">Close</button><img id="lbi" alt="Quote image"></div>
 <section class="block" id="guides"><div class="wrap"><h2>Free guides</h2><p class="lede">Short, printable and easy to finish. Download them free, no sign-up needed. Join free to get a calm quote in your inbox each morning.</p>
@@ -161,18 +161,15 @@ function draw(){var c=$('#chips');c.innerHTML='';cats.forEach(function(k){var b=
  var g=$('#qgrid');g.innerHTML='';Q.forEach(function(q){if(sel!=='All'&&q[0]!==sel)return;var d=document.createElement('div');d.className='q';var p=document.createElement('p');p.textContent=q[1];var m=document.createElement('div');m.className='meta';var s=document.createElement('span');s.textContent=q[0];var b=document.createElement('button');b.type='button';b.textContent='Copy';b.onclick=function(){copy('"'+q[1]+'" - The Real Life Quotes')};m.appendChild(s);m.appendChild(b);d.appendChild(p);d.appendChild(m);g.appendChild(d)})}
 draw();
 
-var G=window.RLQ_GALLERY||{photos:[],reels:[]};var gt='photos';
-function gdraw(){var w=$('#ggrid');w.innerHTML='';w.className='ggrid'+(gt==='reels'?' reels':'');
- if(gt==='photos'){G.photos.forEach(function(p){var i=document.createElement('img');i.src=p.src;i.loading='lazy';i.alt='Quote image from The Real Life Quotes';i.onclick=function(){$('#lbi').src=p.src;$('#lb').hidden=false};w.appendChild(i)})}
- else{G.reels.forEach(function(r){var f=document.createElement('figure');var v=document.createElement('video');v.src=r.src;v.controls=true;v.preload='none';v.playsInline=true;var c=document.createElement('figcaption');c.textContent=r.title||'';f.appendChild(v);f.appendChild(c);w.appendChild(f)})}
- document.querySelectorAll('#gtabs .chip').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.t===gt?'true':'false')})}
-document.querySelectorAll('#gtabs .chip').forEach(function(b){b.onclick=function(){gt=b.dataset.t;gdraw()}});
+var G=window.RLQ_GALLERY||{photos:[],reels:[]};
+function gdraw(){var w=$('#gp');w.innerHTML='';G.photos.forEach(function(p){var i=document.createElement('img');i.src=p.src;i.loading='lazy';i.alt='Quote image from The Real Life Quotes';i.onclick=function(){$('#lbi').src=p.src;$('#lb').hidden=false};w.appendChild(i)});
+ var r=$('#gr');r.innerHTML='';G.reels.forEach(function(x){var f=document.createElement('figure');var v=document.createElement('video');v.src=x.src;v.controls=true;v.preload='none';v.playsInline=true;var c=document.createElement('figcaption');c.textContent=x.title||'';f.appendChild(v);f.appendChild(c);r.appendChild(f)})}
+document.querySelectorAll('.qarrow[data-s]').forEach(function(b){b.onclick=function(){document.getElementById(b.dataset.s).scrollBy({left:520*b.dataset.d})}});
 $('#lbx').onclick=function(){$('#lb').hidden=true};$('#lb').onclick=function(e){if(e.target.id==='lb')$('#lb').hidden=true};
 document.addEventListener('keydown',function(e){if(e.key==='Escape')$('#lb').hidden=true});
 gdraw();
 document.querySelectorAll('[data-signup]').forEach(function(b){b.addEventListener('click',function(){document.getElementById('signup').showModal()})});document.getElementById('signupx').addEventListener('click',function(){document.getElementById('signup').close()});
 document.getElementById('qprev').onclick=function(){document.getElementById('qgrid').scrollBy({left:-620})};document.getElementById('qnext').onclick=function(){document.getElementById('qgrid').scrollBy({left:620})};
-document.getElementById('gprev').onclick=function(){document.getElementById('ggrid').scrollBy({left:-480})};document.getElementById('gnext').onclick=function(){document.getElementById('ggrid').scrollBy({left:480})};
 </script>
 <dialog id="signup" style="border:0;border-radius:16px;padding:0;max-width:560px;width:94%"><button type="button" id="signupx" style="float:right;margin:8px 12px;border:0;background:none;font-size:15px;cursor:pointer">Close</button><iframe src="https://670fcefd.sibforms.com/serve/MUIFAJqLrXS1zgcXTQeBCK8wJFvbR2rO_BRv0Ocp3UN0ZlzZ-mFFe3IXnCJ4j5DQT_Dy2KWIKFNgIbr-dSVFDnBtoBxmPo4vwcNuYQpz85D4YIUKCj2pVu9mvMOzga__ItNJLOGSmOEwgZ_yiA6FSy8SppamLB2WNiJg7hsmwn93UQKHGbMlRNsbRVxvfuATqL5bPEJefcRh5qGAmw==" width="540" height="420" frameborder="0" scrolling="auto" style="display:block;margin:0 auto;max-width:100%;border:0" title="Sign up"></iframe></dialog>
 </body></html>
