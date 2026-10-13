@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Your journal | The Real Life Quotes</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap"><style>
+/* Layout: one calm reading column; cover and buy card side by side on wide screens, sample pages as a horizontal rail */
+:root{--bg:#f6f2ea;--surface:#ffffff;--fg:#1f2d33;--muted:#5f6f76;--accent:#2f7f86;--accent-ink:#ffffff;--deep:#16343f;--gold:#b08a4e;--line:#d9d4c7;--tint:#e4eeee;
+--display:"Lora",Georgia,"Times New Roman",serif;--body:"Source Sans 3","Helvetica Neue",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1c22;--surface:#17282f;--fg:#e8efef;--muted:#9fb3b7;--accent:#6bb7bd;--accent-ink:#0f1c22;--deep:#d7e7e8;--gold:#d2b074;--line:#2b3f46;--tint:#1b3037;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1c22;--surface:#17282f;--fg:#e8efef;--muted:#9fb3b7;--accent:#6bb7bd;--accent-ink:#0f1c22;--deep:#d7e7e8;--gold:#d2b074;--line:#2b3f46;--tint:#1b3037;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:18px;line-height:1.6}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin-inline:auto;padding-inline:20px}
+header.top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:18px;font-size:15px}
+header.top a{text-decoration:none;color:var(--muted)}
+header.top a.name{color:var(--deep);font-family:var(--display);font-weight:600}
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:center;padding-block:28px 56px}
+.hero img{width:100%;height:auto;border-radius:6px;box-shadow:0 18px 40px rgba(22,52,63,.28)}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 12px}
+h1{font-family:var(--display);color:var(--deep);font-size:clamp(34px,5vw,54px);line-height:1.1;margin:0 0 16px;text-wrap:balance;font-weight:600}
+h2{font-family:var(--display);color:var(--deep);font-size:clamp(26px,3.4vw,34px);line-height:1.2;margin:0 0 14px;text-wrap:balance;font-weight:600}
+.lead{font-size:20px;color:var(--muted);margin:0 0 24px;max-width:34em}
+.buy{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:15px 28px;border-radius:4px;font-weight:600;text-decoration:none;font-size:18px}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible,a:focus-visible,.thumb:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.price{font-family:var(--display);font-size:28px;color:var(--deep)}
+.small{font-size:15px;color:var(--muted);margin:0}
+section{padding-block:52px;border-top:1px solid var(--line)}
+.narrow{max-width:680px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:24px}
+.steps h3{font-family:var(--display);font-size:20px;margin:0 0 6px;color:var(--deep)}
+.steps p{margin:0;color:var(--muted);font-size:17px}
+.rail{display:flex;gap:18px;overflow-x:auto;padding:6px 4px 18px;margin-top:20px;scroll-snap-type:x proximity}
+.thumb{flex:0 0 min(230px,62vw);scroll-snap-align:start;background:none;border:0;padding:0;cursor:zoom-in;text-align:left;color:inherit;font:inherit}
+.thumb img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:#fff;box-shadow:0 6px 16px rgba(22,52,63,.14)}
+.thumb span{display:block;margin-top:8px;font-size:15px;color:var(--muted)}
+.inside{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 40px;padding:0;list-style:none;margin:18px 0 0}
+.inside li{padding-left:22px;position:relative;color:var(--fg)}
+.inside li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:2px;background:var(--gold)}
+.band{background:var(--deep);color:#f4efe6;border-radius:8px;padding:40px 28px;text-align:center}
+.band h2{color:#f4efe6;margin-bottom:8px}
+.band .price{color:#f4efe6}
+.band .btn{background:#f4efe6;color:#16343f}
+.band .small{color:#b9cdd0}
+.quote{font-family:var(--display);font-style:italic;font-size:clamp(22px,3vw,28px);color:var(--deep);max-width:24em;margin:0;text-wrap:balance}
+details{border-top:1px solid var(--line);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600;color:var(--deep)}
+details p{margin:10px 0 0;color:var(--muted)}
+footer{padding-block:36px 56px;text-align:center;font-size:15px;color:var(--muted)}
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,560px)}
+dialog::backdrop{background:rgba(8,16,20,.82)}
+dialog img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+dialog button{position:absolute;top:8px;right:8px;background:var(--surface);color:var(--fg);border:0;border-radius:4px;padding:8px 14px;font-size:16px;cursor:pointer}
+@media (max-width:760px){.hero{grid-template-columns:minmax(0,1fr);gap:28px}.hero .cover{max-width:320px;margin-inline:auto}.steps{grid-template-columns:minmax(0,1fr)}.inside{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:no-preference){.btn{transition:filter .15s}}
+</style></head><body><div class="wrap narrow" style="padding-block:60px;text-align:center">
+<p class="eyebrow">Thank you</p><h1>Your journal is ready</h1>
+<p class="lead" style="margin-inline:auto">Choose the size for your printer. Save the file, then print it at home or at a print shop.</p>
+<p><a class="btn" href="30-Day-Gratitude-Journal-Letter.pdf" download>Download US Letter</a></p>
+<p><a class="btn" href="30-Day-Gratitude-Journal-A4.pdf" download style="background:transparent;color:var(--accent);border:2px solid var(--accent)">Download A4</a></p>
+<p class="small" style="margin-top:28px">Use Letter in Canada and the United States, and A4 elsewhere. This journal is for your own personal use.</p>
+<p class="quote" style="margin:36px auto 0">Be gentle with yourself. You are doing something kind.</p>
+<p class="small" style="margin-top:36px">Questions? Message me on <a href="https://www.facebook.com/913293745199084">Facebook</a>. &middot; <a href="https://thereallifequotes.com/">thereallifequotes.com</a></p>
+</div></body></html>

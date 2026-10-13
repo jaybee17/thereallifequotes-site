@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>30 Days of Gratitude Journal | The Real Life Quotes</title><meta name="description" content="A printable 30-day gratitude journal. One quiet page a day, with a short saying, three lines of thanks and a gentle note for tomorrow."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap"><style>
+/* Layout: one calm reading column; cover and buy card side by side on wide screens, sample pages as a horizontal rail */
+:root{--bg:#f6f2ea;--surface:#ffffff;--fg:#1f2d33;--muted:#5f6f76;--accent:#2f7f86;--accent-ink:#ffffff;--deep:#16343f;--gold:#b08a4e;--line:#d9d4c7;--tint:#e4eeee;
+--display:"Lora",Georgia,"Times New Roman",serif;--body:"Source Sans 3","Helvetica Neue",Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1c22;--surface:#17282f;--fg:#e8efef;--muted:#9fb3b7;--accent:#6bb7bd;--accent-ink:#0f1c22;--deep:#d7e7e8;--gold:#d2b074;--line:#2b3f46;--tint:#1b3037;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1c22;--surface:#17282f;--fg:#e8efef;--muted:#9fb3b7;--accent:#6bb7bd;--accent-ink:#0f1c22;--deep:#d7e7e8;--gold:#d2b074;--line:#2b3f46;--tint:#1b3037;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:18px;line-height:1.6}
+a{color:var(--accent)}
+.wrap{max-width:1040px;margin-inline:auto;padding-inline:20px}
+header.top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:18px;font-size:15px}
+header.top a{text-decoration:none;color:var(--muted)}
+header.top a.name{color:var(--deep);font-family:var(--display);font-weight:600}
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:center;padding-block:28px 56px}
+.hero img{width:100%;height:auto;border-radius:6px;box-shadow:0 18px 40px rgba(22,52,63,.28)}
+.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 12px}
+h1{font-family:var(--display);color:var(--deep);font-size:clamp(34px,5vw,54px);line-height:1.1;margin:0 0 16px;text-wrap:balance;font-weight:600}
+h2{font-family:var(--display);color:var(--deep);font-size:clamp(26px,3.4vw,34px);line-height:1.2;margin:0 0 14px;text-wrap:balance;font-weight:600}
+.lead{font-size:20px;color:var(--muted);margin:0 0 24px;max-width:34em}
+.buy{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:15px 28px;border-radius:4px;font-weight:600;text-decoration:none;font-size:18px}
+.btn:hover{filter:brightness(1.08)}
+.btn:focus-visible,a:focus-visible,.thumb:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.price{font-family:var(--display);font-size:28px;color:var(--deep)}
+.small{font-size:15px;color:var(--muted);margin:0}
+section{padding-block:52px;border-top:1px solid var(--line)}
+.narrow{max-width:680px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:24px}
+.steps h3{font-family:var(--display);font-size:20px;margin:0 0 6px;color:var(--deep)}
+.steps p{margin:0;color:var(--muted);font-size:17px}
+.rail{display:flex;gap:18px;overflow-x:auto;padding:6px 4px 18px;margin-top:20px;scroll-snap-type:x proximity}
+.thumb{flex:0 0 min(230px,62vw);scroll-snap-align:start;background:none;border:0;padding:0;cursor:zoom-in;text-align:left;color:inherit;font:inherit}
+.thumb img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:#fff;box-shadow:0 6px 16px rgba(22,52,63,.14)}
+.thumb span{display:block;margin-top:8px;font-size:15px;color:var(--muted)}
+.inside{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 40px;padding:0;list-style:none;margin:18px 0 0}
+.inside li{padding-left:22px;position:relative;color:var(--fg)}
+.inside li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:2px;background:var(--gold)}
+.band{background:var(--deep);color:#f4efe6;border-radius:8px;padding:40px 28px;text-align:center}
+.band h2{color:#f4efe6;margin-bottom:8px}
+.band .price{color:#f4efe6}
+.band .btn{background:#f4efe6;color:#16343f}
+.band .small{color:#b9cdd0}
+.quote{font-family:var(--display);font-style:italic;font-size:clamp(22px,3vw,28px);color:var(--deep);max-width:24em;margin:0;text-wrap:balance}
+details{border-top:1px solid var(--line);padding:16px 0}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:600;color:var(--deep)}
+details p{margin:10px 0 0;color:var(--muted)}
+footer{padding-block:36px 56px;text-align:center;font-size:15px;color:var(--muted)}
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,560px)}
+dialog::backdrop{background:rgba(8,16,20,.82)}
+dialog img{width:100%;height:auto;display:block;border-radius:4px;background:#fff}
+dialog button{position:absolute;top:8px;right:8px;background:var(--surface);color:var(--fg);border:0;border-radius:4px;padding:8px 14px;font-size:16px;cursor:pointer}
+@media (max-width:760px){.hero{grid-template-columns:minmax(0,1fr);gap:28px}.hero .cover{max-width:320px;margin-inline:auto}.steps{grid-template-columns:minmax(0,1fr)}.inside{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:no-preference){.btn{transition:filter .15s}}
+</style></head><body>
+<div class="wrap">
+<header class="top"><a class="name" href="https://thereallifequotes.com/">The Real Life Quotes</a><a href="https://thereallifequotes.com/#guides">Free guides</a></header>
+
+<div class="hero">
+ <div class="cover"><img src="cover-journal.jpg" alt="Cover of 30 Days of Gratitude: a sun setting behind layered teal hills"></div>
+ <div>
+  <p class="eyebrow">A printable journal &middot; 46 pages</p>
+  <h1>30 Days of Gratitude</h1>
+  <p class="lead">One quiet page a day. Five minutes to notice what is good, write it down, and end the day a little lighter.</p>
+  <div class="buy"><a class="btn" href="#buy" onclick="return buyJournal(this)">Get the journal</a><span class="price">$9 CAD</span></div>
+  <p class="small">Instant PDF download. US Letter and A4 sizes included. Print as many copies as you like for yourself.</p>
+ </div>
+</div>
+
+<section>
+ <div class="narrow">
+  <p class="quote">Gratitude turns what we have into enough.</p>
+ </div>
+ <p class="narrow" style="margin-top:22px">Some days feel too busy or too heavy to look for the good. This journal gives you one simple page each day, with a short saying to start, three lines for what you are thankful for, and a gentle note to yourself for tomorrow. No pressure and no perfect handwriting. If you miss a day, you turn the page and carry on.</p>
+</section>
+
+<section>
+ <h2>Look inside</h2>
+ <p class="small">Tap any page to see it larger. These are real pages from the journal.</p>
+ <div class="rail" role="list"><button class="thumb" type="button" data-full="sample-cover.jpg" data-cap="The cover"><img src="sample-cover.jpg" alt="Sample page: The cover" loading="lazy"><span>The cover</span></button><button class="thumb" type="button" data-full="sample-how1.jpg" data-cap="How to use it"><img src="sample-how1.jpg" alt="Sample page: How to use it" loading="lazy"><span>How to use it</span></button><button class="thumb" type="button" data-full="sample-intention.jpg" data-cap="Your intention page"><img src="sample-intention.jpg" alt="Sample page: Your intention page" loading="lazy"><span>Your intention page</span></button><button class="thumb" type="button" data-full="sample-divider.jpg" data-cap="A week opener"><img src="sample-divider.jpg" alt="Sample page: A week opener" loading="lazy"><span>A week opener</span></button><button class="thumb" type="button" data-full="sample-day.jpg" data-cap="A daily page"><img src="sample-day.jpg" alt="Sample page: A daily page" loading="lazy"><span>A daily page</span></button><button class="thumb" type="button" data-full="sample-weekly.jpg" data-cap="A weekly reflection"><img src="sample-weekly.jpg" alt="Sample page: A weekly reflection" loading="lazy"><span>A weekly reflection</span></button></div>
+</section>
+
+<section>
+ <h2>Five minutes a day</h2>
+ <div class="steps">
+  <div><h3>Read the thought</h3><p>Each page opens with a short saying. Read it once, slowly, and let it settle.</p></div>
+  <div><h3>Write three thanks</h3><p>Small and specific is best: a warm cup of tea, a kind message, a quiet hour.</p></div>
+  <div><h3>End gently</h3><p>Note one good moment, one word for how you feel, and one kind thing for tomorrow.</p></div>
+ </div>
+</section>
+
+<section>
+ <h2>What is inside</h2>
+ <ul class="inside">
+  <li>A welcome note to start</li>
+  <li>Two pages on how to use the journal</li>
+  <li>A page for your intention and reasons</li>
+  <li>30 daily pages, each with its own saying</li>
+  <li>Five week openers with a thought to carry</li>
+  <li>Four weekly reflection pages</li>
+  <li>A looking-back page at the end</li>
+  <li>A completion page with your name and date</li>
+  <li>US Letter and A4 PDFs in one download</li>
+  <li>Large, easy-to-read print</li>
+ </ul>
+</section>
+
+<section>
+ <h2>Who it is for</h2>
+ <p class="narrow">Anyone who wants a slower, kinder end to the day. It works as a first journal, and it is easy to read and write in. There are no apps, no accounts and no reminders. Print it, keep it by your bed or your kettle, and use a pen you like.</p>
+</section>
+
+<section>
+ <div class="band">
+  <h2>Begin your 30 days</h2>
+  <p class="price">$9 CAD</p>
+  <p style="margin:18px 0"><a class="btn" href="#buy" onclick="return buyJournal(this)">Get the journal</a></p>
+  <p class="small">Secure checkout with Stripe. Your download link arrives right after payment.</p>
+ </div>
+</section>
+
+<section>
+ <h2>Questions</h2>
+ <div class="narrow" style="max-width:none">
+ <details><summary>Is this a physical book?</summary><p>No. It is a PDF you print at home or at a print shop. You can print it single-sided or double-sided, and start again any time.</p></details>
+ <details><summary>Which size should I print?</summary><p>Use the US Letter file in Canada and the United States, and the A4 file elsewhere. Both are included.</p></details>
+ <details><summary>Can I use it on a tablet?</summary><p>Yes. Open the PDF in any notes app that lets you write on PDFs. Many people prefer paper.</p></details>
+ <details><summary>What if I miss a day?</summary><p>Turn to the next page. There is no streak to protect.</p></details>
+ <details><summary>Can I share or resell it?</summary><p>The journal is for your own personal use. Please do not share the file or resell it. You are welcome to tell friends where to find it.</p></details>
+ <details><summary>Something is wrong with my file.</summary><p>Message me on <a href="https://www.facebook.com/913293745199084">Facebook</a> and I will make it right.</p></details>
+ </div>
+</section>
+
+<footer>The Real Life Quotes &middot; <a href="https://thereallifequotes.com/">thereallifequotes.com</a></footer>
+</div>
+<dialog id="dlg"><button type="button" id="dlgx">Close</button><img id="dlgimg" alt=""></dialog>
+<script>
+(function(){var d=document.getElementById('dlg'),im=document.getElementById('dlgimg');
+document.querySelectorAll('.thumb').forEach(function(t){t.addEventListener('click',function(){im.src=t.dataset.full;im.alt=t.dataset.cap;if(d.showModal)d.showModal();});});
+document.getElementById('dlgx').addEventListener('click',function(){d.close();});
+d.addEventListener('click',function(e){if(e.target===d)d.close();});})();
+</script>
+<script>
+async function buyJournal(el){var t=el.textContent;el.textContent='Loading...';
+try{var r=await fetch('https://trobqziwskkxclablptx.supabase.co/functions/v1/product-checkout',{method:'POST',headers:{'Content-Type':'application/json','apikey':'sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn','Authorization':'Bearer sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn'},body:JSON.stringify({product:'gratitudeJournal'})});
+var d=await r.json();if(d.url){location.href=d.url;}else{throw new Error('no url');}}
+catch(e){el.textContent=t;alert('Checkout is not ready yet. Please try again soon.');}
+return false;}
+</script></body></html>
