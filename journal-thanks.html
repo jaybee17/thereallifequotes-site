@@ -55,11 +55,19 @@ dialog button{position:absolute;top:8px;right:8px;background:var(--surface);colo
 @media (max-width:760px){.hero{grid-template-columns:minmax(0,1fr);gap:28px}.hero .cover{max-width:320px;margin-inline:auto}.steps{grid-template-columns:minmax(0,1fr)}.inside{grid-template-columns:minmax(0,1fr)}}
 @media (prefers-reduced-motion:no-preference){.btn{transition:filter .15s}}
 </style></head><body><div class="wrap narrow" style="padding-block:60px;text-align:center">
-<p class="eyebrow">Thank you</p><h1>Your journal is ready</h1>
-<p class="lead" style="margin-inline:auto">Choose the size for your printer. Save the file, then print it at home or at a print shop.</p>
-<p><a class="btn" href="30-Day-Gratitude-Journal-Letter.pdf" download>Download US Letter</a></p>
-<p><a class="btn" href="30-Day-Gratitude-Journal-A4.pdf" download style="background:transparent;color:var(--accent);border:2px solid var(--accent)">Download A4</a></p>
+<div id="ty"><p class="small">Confirming your payment...</p></div>
+<script>
+(function(){var p=new URLSearchParams(location.search),sid=p.get('session_id'),prod=p.get('product')||'gratitudeJournal',box=document.getElementById('ty');
+function err(m){box.innerHTML='<p class="eyebrow">One moment</p><h1>We could not confirm your payment</h1><p class="lead" style="margin-inline:auto">'+m+' If you were charged, message me on Facebook and I will send your journal right away.</p>';}
+if(!sid){err('This page needs your payment link.');return;}
+fetch('https://trobqziwskkxclablptx.supabase.co/functions/v1/verify-product-payment',{method:'POST',headers:{'Content-Type':'application/json','apikey':'sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn','Authorization':'Bearer sb_publishable_ZXf00h8HfbURtCQbOhJkpA_oWIE20Cn'},body:JSON.stringify({sessionId:sid,product:prod})})
+.then(function(r){return r.json();}).then(function(d){
+if(!d.verified){err(d.error||'Payment not confirmed.');return;}
+var a4=(d.downloadUrl||'').replace('Letter','A4');
+box.innerHTML='<p class="eyebrow">Thank you</p><h1>Your journal is ready</h1><p class="lead" style="margin-inline:auto">Choose the size for your printer. Save the file, then print it at home or at a print shop.</p><p><a class="btn" href="'+d.downloadUrl+'" download>Download US Letter</a></p><p><a class="btn" href="'+a4+'" download style="background:transparent;color:var(--accent);border:2px solid var(--accent)">Download A4</a></p>'+(d.email?'<p class="small">We also emailed your link to '+d.email.replace(/[<>&"]/g,'')+'. Check spam if it is slow.</p>':'');
+}).catch(function(){err('Something went wrong.');});})();
+</script>
 <p class="small" style="margin-top:28px">Use Letter in Canada and the United States, and A4 elsewhere. This journal is for your own personal use.</p>
 <p class="quote" style="margin:36px auto 0">Be gentle with yourself. You are doing something kind.</p>
-<p class="small" style="margin-top:36px">Questions? Message me on <a href="https://www.facebook.com/913293745199084">Facebook</a>. &middot; <a href="https://thereallifequotes.com/">thereallifequotes.com</a></p>
+<p class="small" style="margin-top:36px">Questions? Message me on <a href="https://www.facebook.com/thereallifequotes.official">Facebook</a>. &middot; <a href="https://thereallifequotes.com/">thereallifequotes.com</a></p>
 </div></body></html>
